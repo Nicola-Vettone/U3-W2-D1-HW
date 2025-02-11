@@ -7,7 +7,7 @@ const SingleBook = ({ book, changeBookSelected, checkSelected, selectedBookAsin 
   //   selected: false
   // };
 
-  const [selected, setSelected] = useState(false);
+  /* const [selected, setSelected] = */ useState(false);
 
   checkSelected = () => (selectedBookAsin === book.asin ? "border-danger" : "");
 
@@ -19,7 +19,7 @@ const SingleBook = ({ book, changeBookSelected, checkSelected, selectedBookAsin 
           src={book.img}
           onClick={() => {
             changeBookSelected(book);
-            setSelected(!selected);
+            /*  setSelected(!selected); */
           }}
         />
         <Card.Body>
