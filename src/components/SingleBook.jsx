@@ -2,16 +2,15 @@ import { useState } from "react";
 import { Badge, Card, Col } from "react-bootstrap";
 // import CommentArea from "./CommentArea";
 
-const SingleBook = ({ book, changeBookSelected }) => {
+const SingleBook = ({ book, changeBookSelected, checkSelected, selectedBookAsin }) => {
   // state = {
   //   selected: false
   // };
 
   const [selected, setSelected] = useState(false);
 
-  const checkSelected = () => (selected ? "border-danger" : "");
+  checkSelected = () => (selectedBookAsin === book.asin ? "border-danger" : "");
 
-  console.log(this.props);
   return (
     <Col>
       <Card className={checkSelected()}>
@@ -29,8 +28,6 @@ const SingleBook = ({ book, changeBookSelected }) => {
           <Card.Text>
             <Badge bg="info">€{book.price}</Badge>
           </Card.Text>
-
-          {/* {this.state.selected && <CommentArea asin={this.props.book.asin} />} */}
         </Card.Body>
       </Card>
     </Col>

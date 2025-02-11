@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
 const AddComment = ({ asin, fetchComments }) => {
@@ -8,12 +8,20 @@ const AddComment = ({ asin, fetchComments }) => {
     elementId: asin,
   });
 
+  useEffect(() => {
+    setReview({
+      comment: "",
+      rate: "1",
+      elementId: asin,
+    });
+  }, [asin]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     console.log("SUBMIT");
 
-    const resp = await fetch("https://striveschool-api.herokuapp.com/api/comments/", {
+    const resp = await fetch(`https://striveschool-api.herokuapp.com/api/comments/`, {
       method: "POST",
       body: JSON.stringify(review),
       headers: {

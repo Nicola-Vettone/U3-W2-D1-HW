@@ -18,7 +18,7 @@ const CommentArea = ({ asin, imgSrc, title }) => {
 
     if (resp.ok) {
       const reviews = await resp.json();
-      console.log(reviews);
+      console.log(asin);
 
       setReviews(reviews);
       setFetched(true);

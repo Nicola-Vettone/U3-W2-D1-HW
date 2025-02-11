@@ -35,7 +35,7 @@ const BookList = ({ books }) => {
         </Col>
         <Col md={4}>
           {selectedBook ? (
-            <CommentArea asin={selectedBook.asin} imgSrc={selectedBook.imgSrc} title={selectedBook.title} />
+            <CommentArea asin={selectedBook.asin} imgSrc={selectedBook.img} title={selectedBook.title} />
           ) : (
             <Alert variant="warning">👈Seleziona un libro per vederne le recensioni</Alert>
           )}
